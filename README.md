@@ -6,8 +6,8 @@ Un simple script para enviar reportes por correo de oportunidades de negocio que
 Por ahora debes tener instalado Ruby >= 2.0 y hacer:
 
 ```bash
-$ git clone https://github.com/ITLinuxCL/elastix-reports.git
-$ cd elastix-reports
+$ git clone git remote add origin git@github.com:ITLinuxCL/pipedrive-reports.git
+$ cd pipedrive-reports
 $ bundle install
 ```
 
@@ -15,12 +15,9 @@ $ bundle install
 Parado en el mismo directorio, para que tome el template, ejecutas:
 
 ```bash
-$ ELASTIX_DB_HOST=192.168.110.90 ELASTIX_DB_USER=usuario \
-ELASTIX_DB_PASSWD=password ELASTIX_DB_NAME=asteriskcdrdb \
-ELASTIX_EMAIL_FROM="Yo <emaio@example.com>" \
-ELASTIX_EMAIL_TO="mantencion@example.com" \
-ELASTIX_EMAIL_SMTP=mail.example.com \
-ruby elastix-reports.rb
+$ PIPEDRIVE_EMAIL_FROM='pipdrive@example.com' PIPEDRIVE_EMAIL_TO='sales@example.com' \
+PIPEDRIVE_EMAIL_SMTP='mail.example.com' PIPEDRIVE_API_KEY='DKDJDJDJD323232'\
+PIPEDRIVE_DAYS_AGO=14 ruby pipedrive-reports.rb
 ```
 
 Son un montón de variables de entorno, pero bueno ;)
