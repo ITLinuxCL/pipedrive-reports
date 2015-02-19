@@ -6,7 +6,7 @@ Un simple script para enviar reportes por correo de oportunidades de negocio que
 Por ahora debes tener instalado Ruby >= 2.0 y hacer:
 
 ```bash
-$ git clone git remote add origin git@github.com:ITLinuxCL/pipedrive-reports.git
+$ git clone git@github.com:ITLinuxCL/pipedrive-reports.git
 $ cd pipedrive-reports
 $ bundle install
 ```
