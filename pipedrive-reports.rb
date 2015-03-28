@@ -50,7 +50,7 @@ class Report
     Mail.deliver do 
         to EMAIL_TO
         from EMAIL_FROM
-        subject "Repor de oportunidades abandonadas"
+        subject "Reporte de oportunidades abandonadas"
         html_part do
           content_type 'text/html; charset=UTF-8'
           body ERB.new(File.read('reporte.erb')).result(b)
