@@ -13,8 +13,6 @@ require 'date'
 require 'mail'
 require 'erb'
 require 'pipedrive-ruby'
-require 'pp'
-
 
 class Deal
   
@@ -27,7 +25,8 @@ class Deal
   
   # Sin actualizacion por 10 días
   def without_updates
-    @all.select {|deal| (Date.today - Date.parse(deal.update_time)) >= PIPEDRIVE_DAYS_AGO }
+    deals = @all.keep_if {|d| d.status == "open" }
+    deals.select {|deal| (Date.today - Date.parse(deal.update_time)) >= PIPEDRIVE_DAYS_AGO }
   end
   
 end
@@ -62,6 +61,7 @@ end
 
 # Now do stuff with it
 deal = Deal.new
+
 reporte = Report.new deal.without_updates
 
 reporte.send
