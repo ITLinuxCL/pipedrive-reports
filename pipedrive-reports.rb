@@ -14,6 +14,7 @@ require 'mail'
 require 'erb'
 require 'pipedrive-ruby'
 
+
 class Deal
   
   attr_accessor :all
